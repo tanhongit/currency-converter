@@ -37,7 +37,7 @@ function getExchangeRate() {
         amountVal = 1;
     }
     exchangeRateTxt.innerText = "Getting exchange rate...";
-    let url = `https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/${fromCurrency.value}`;
+    let url = `https://v6.exchangerate-api.com/v6/0ae5560ee7661b1824520e41/latest/${fromCurrency.value}`; // EDIT YOUR-API-KEY (ex: 0ae5560ee7661b1824520e41)
 
     fetch(url).then(response => response.json()).then(result => {
         let exchangeRate = result.conversion_rates[toCurrency.value];
@@ -57,7 +57,6 @@ getButton.addEventListener("click", e => {
     getExchangeRate();
 });
 
-
 exchangeIcon.addEventListener("click", () => {
     let tempCode = fromCurrency.value;
     fromCurrency.value = toCurrency.value;
@@ -65,4 +64,18 @@ exchangeIcon.addEventListener("click", () => {
     loadFlag(fromCurrency);
     loadFlag(toCurrency);
     getExchangeRate();
+})
+
+fromCurrency.addEventListener("change", () => {
+    setTimeout(function () {
+        loadFlag(fromCurrency);
+        getExchangeRate();
+    }, 300);
+})
+
+toCurrency.addEventListener("change", () => {
+    setTimeout(function () {
+        loadFlag(toCurrency);
+        getExchangeRate();
+    }, 300);
 })
