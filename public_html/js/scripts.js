@@ -1,7 +1,9 @@
 const dropList = document.querySelectorAll(".currency-section select");
 const fromCurrency = document.querySelector(".from-currency select"),
-toCurrency = document.querySelector(".to-currency select"),
-getButton = document.querySelector(".convert-section button");
+    toCurrency = document.querySelector(".to-currency select"),
+    getButton = document.querySelector(".convert-section button");
+const exchangeIcon = document.querySelector(".currency-section .icon");
+
 for (let i = 0; i < dropList.length; i++) {
     for (let currencyCode in countryList) {
 
@@ -36,22 +38,31 @@ function getExchangeRate() {
     }
     exchangeRateTxt.innerText = "Getting exchange rate...";
     let url = `https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/${fromCurrency.value}`;
-    
+
     fetch(url).then(response => response.json()).then(result => {
-        let exchangeRate = result.conversion_rates[toCurrency.value]; 
-        let totalExRate = (amountVal * exchangeRate).toFixed(2); 
+        let exchangeRate = result.conversion_rates[toCurrency.value];
+        let totalExRate = (amountVal * exchangeRate).toFixed(2);
         exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
-    }).catch(() => { 
+    }).catch(() => {
         exchangeRateTxt.innerText = "Something went wrong";
     });
 }
 
-window.addEventListener("load", ()=>{
+window.addEventListener("load", () => {
     getExchangeRate();
 });
 
-getButton.addEventListener("click", e =>{
-    e.preventDefault(); 
+getButton.addEventListener("click", e => {
+    e.preventDefault();
     getExchangeRate();
 });
 
+
+exchangeIcon.addEventListener("click", () => {
+    let tempCode = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = tempCode;
+    loadFlag(fromCurrency);
+    loadFlag(toCurrency);
+    getExchangeRate();
+})
