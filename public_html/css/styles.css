@@ -32,7 +32,8 @@ body {
     margin: 40px 0 20px 0;
 }
 
-.convert-section .input-amount, .title-currency {
+.convert-section .input-amount,
+.title-currency {
     font-size    : 18px;
     margin-bottom: 5px;
 }
@@ -71,7 +72,7 @@ body {
     border-radius  : 5px;
     justify-content: center;
     border         : 1px solid #999;
-    cursor: pointer;
+    cursor         : pointer;
 }
 
 .currency-section .select-box img {
@@ -83,7 +84,7 @@ body {
     font-size : 16px;
     background: none;
     margin    : 0 -5px 0 5px;
-    cursor: pointer;
+    cursor    : pointer;
 }
 
 .currency-section .select-box select::-webkit-scrollbar {
@@ -105,6 +106,25 @@ body {
     margin-top: 30px;
     font-size : 22px;
 }
+
 .currency-section .currency-items {
     /* padding: 10px; */
+}
+
+.convert-section .exchange-rate {
+    font-size: 17px;
+    margin   : 20px 0 30px;
+}
+
+.convert-section button {
+    height    : 52px;
+    color     : #fff;
+    font-size : 17px;
+    cursor    : pointer;
+    background: #ff57f1;
+    transition: 0.3s ease;
+}
+
+.convert-section button:hover {
+    background: #fa25cc;
 }
