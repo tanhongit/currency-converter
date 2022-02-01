@@ -3,6 +3,7 @@ const fromCurrency = document.querySelector(".from-currency select"),
     toCurrency = document.querySelector(".to-currency select"),
     getButton = document.querySelector(".convert-section button");
 const exchangeIcon = document.querySelector(".currency-section .icon");
+const amount = document.querySelector(".convert-section .input-amount input");
 
 for (let i = 0; i < dropList.length; i++) {
     for (let currencyCode in countryList) {
@@ -28,7 +29,6 @@ function loadFlag(element) {
 }
 
 function getExchangeRate() {
-    const amount = document.querySelector(".convert-section .input-amount input");
     const exchangeRateTxt = document.querySelector(".convert-section .exchange-rate");
     let amountVal = amount.value;
 
@@ -78,4 +78,10 @@ toCurrency.addEventListener("change", () => {
         loadFlag(toCurrency);
         getExchangeRate();
     }, 300);
+})
+
+amount.addEventListener("change", () => {
+    setTimeout(function () {
+        getExchangeRate();
+    }, 500);
 })
