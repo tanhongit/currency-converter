@@ -50,6 +50,7 @@ body {
     font-size: 17px;
     padding  : 0 15px;
     border   : 1px solid #999;
+    margin-top: 5px;
 }
 
 .convert-section input:focus {
@@ -123,8 +124,32 @@ body {
     cursor    : pointer;
     background: #ff57f1;
     transition: 0.3s ease;
+    font-weight: 600;
 }
 
 .convert-section button:hover {
     background: #fa25cc;
+}
+
+.custom-btn {
+	background   : transparent;
+	cursor       : pointer;
+	transition   : all 0.3s ease;
+	position     : relative;
+	display      : inline-block;
+	box-shadow   : inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+		7px 7px 20px 0px rgba(0, 0, 0, .1),
+		4px 4px 5px 0px rgba(0, 0, 0, .1);
+}
+
+.btn-2:before {
+	height: 0%;
+	width : 2px;
+}
+
+.btn-2:hover {
+	box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+		-4px -4px 6px 0 rgba(116, 125, 136, .5),
+		inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+		inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
