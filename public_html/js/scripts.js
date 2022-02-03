@@ -85,3 +85,9 @@ amount.addEventListener("change", () => {
         getExchangeRate();
     }, 500);
 })
+
+amount.addEventListener("input", () => {
+    setTimeout(function () {
+        getExchangeRate();
+    }, 500);
+})
