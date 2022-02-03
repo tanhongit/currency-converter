@@ -107,11 +107,6 @@ body {
     margin-top: 30px;
     font-size : 22px;
 }
-
-.currency-section .currency-items {
-    /* padding: 10px; */
-}
-
 .convert-section .exchange-rate {
     font-size: 17px;
     margin   : 20px 0 30px;
@@ -140,11 +135,6 @@ body {
 	box-shadow   : inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
 		7px 7px 20px 0px rgba(0, 0, 0, .1),
 		4px 4px 5px 0px rgba(0, 0, 0, .1);
-}
-
-.btn-2:before {
-	height: 0%;
-	width : 2px;
 }
 
 .btn-2:hover {

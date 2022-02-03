@@ -48,6 +48,7 @@ function getExchangeRate() {
     });
 }
 
+// events
 window.addEventListener("load", () => {
     getExchangeRate();
 });
